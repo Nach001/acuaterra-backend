@@ -1,0 +1,22 @@
+Clonamos el proyecto en una carpeta basia conel siguiente comando:
+	git clone https://github.com/theAranda88/BackendAcuaTerra.git
+
+con git Branch -r vemos las ramas remotas q hay:
+git branch -r
+  origin/Alvaro
+  origin/Angi
+  origin/Daniel
+  origin/David
+  origin/Diego
+  origin/Duber
+  origin/Labri
+  origin/Susana
+  origin/main
+
+nos posicionamos en nuetsras respectivas ramas con git checkout NomRama:
+git checkout Daniel
+branch 'Daniel' set up to track 'origin/Daniel'.
+Switched to a new branch 'Daniel'
+
+porfavor cero push a la rama main
+	
