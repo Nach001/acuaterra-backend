@@ -1,0 +1,79 @@
+Inicializamos el Proyecto
+Creamos una carpeta para el proyecto llamada Backend
+Nos posicicionamos sobre la carpeta:
+	cd Backend
+
+Inicializa el proyecto con nodejs:
+	npm init -y
+
+Instalamos las dependencias necesarias, vamos a trabar con express que nos facilita la creación de aplicaciones APIs:
+	npm install express
+
+Trabajamos con un middleware que se utiliza para analizar el cuerpo de las solicitudes HTTP. Permite que la aplicación pueda leer los datos enviados como archivos JSON:
+	npm install body-parser
+
+Usamos bcryptjs para cifrar contraseñas ya que es fundamental para la autenticación de usuarios:
+	 npm install bcryptjs
+
+Usamos jsonwebtoken para crear y verificar JSON Web Tokens (JWT). Los JWT son una forma de transmitir información de forma segura, necesario para nuestra login:
+	npm install jsonwebtoken
+
+Permite cargar variables de entorno desde un archivo .env en el proyecto:
+	npm install dotenv	
+
+O poriamos poner el comando con todas las banderas de las bibliotecas o dependencias ya mencionadas: 	npm install express body-parser bcryptjs 	jsonwebtoken dotenv
+
+Integramos BD con MySQL utilizamos el comado para la  descargar la bibioteca de MySQL:
+	npm install mysql2
+
+Creamos un archiv llamado db.js el cual me permite hacer la configuracion de la conexión a nuetsra base d datos
+
+Creamos nuestra base d datos con workbench llmada acuaterra_db con una tabla llamda usuarios con los siguientes campos:
+id_usuario int AI PK 
+nombre varchar(100) 
+email varchar(100) 
+password varchar(255) 
+id_rol int 
+n_documento_identidad varchar(255) 
+sede varchar(255) 
+n_ficha varchar(255) 
+jornada varchar(255) 
+nombre_del_programa varchar(255)
+
+Creamos un archivo llamado index.js donde configuramos la biblioteca express para poder utilizarala, manejar datos JSON, definir nuestro end point base, Utilizar las configuraciones  de las variables de entorno, definimos el puert de nuestro servidor y por ultimo llamamos el metodo de express q hace la escucha y ejecucion o levanatamiento del servidor
+
+Creamos otro archivo para manejar los usuarios llamado users,js que tenemos enlasado con la coneccion a nuestra base de datos donde tenemos nuestros metodos HTTP que necesitamospara nuestro login 2 POST para registro y login, y 1 GET para la enlistada de nuestros usuarios
+Los en end points de nuestra API serian:
+POST de registro:
+	http://localhost:3000/api/users/register
+POST de login:
+	http://localhost:3000/api/users/login
+su payload:
+	{
+    "email": "labrisarivera888@gmail1.com",
+    "password": "12345abcdef"
+}
+GET listarUsuarios:
+	http://localhost:3000/api/users/usuarios
+su payload:
+	{
+    "nombre": "Nas11",
+    "email": "Nas888@gmail1.com",
+    "password": "12345abcdef",
+    "n_documento_identidad": "123456789",
+    "sede": "ctpi",
+    "jornada": "tarde",
+    "_nombre_del_programa": "tegnologo agro"
+}
+
+Creamos un archivo para las variables de entorno llamado .env donde almaceno mi JWT_SECRET utilizado en la creación d los token, el host = loscalhost, el user = user, el password = root, el nombre de nuestra base de datos = acuterra_db  y el puerto por el q esta activo MySQL = 3305
+
+Añadi el scrip "dev": "nodemon index.js",
+Este script se utiliza para iniciar la aplicación en modo de desarrollo. Al ejecutar npm run dev, se ejecuta nodemon index.js. nodemon es una herramienta que monitoriza los cambios en los archivos del proyecto y reinicia automáticamente la aplicación cuando detecta cambios
+
+Comando para levanatr servidor:
+	npm run dev
+
+
+
+
