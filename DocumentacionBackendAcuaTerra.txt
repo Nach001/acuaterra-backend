@@ -21,7 +21,7 @@ Usamos jsonwebtoken para crear y verificar JSON Web Tokens (JWT). Los JWT son un
 Permite cargar variables de entorno desde un archivo .env en el proyecto:
 	npm install dotenv	
 
-O poriamos poner el comando con todas las banderas de las bibliotecas o dependencias ya mencionadas: 	npm install express body-parser bcryptjs 	jsonwebtoken dotenv
+O poriamos poner el comando con todas las banderas de las bibliotecas o dependencias ya mencionadas: 	npm install express body-parser bcryptjs jsonwebtoken dotenv
 
 Integramos BD con MySQL utilizamos el comado para la  descargar la bibioteca de MySQL:
 	npm install mysql2

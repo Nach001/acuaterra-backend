@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Registro de usuario
 router.post('/register', async (req, res) => {
-
+    
     try {
         const { nombre,
                 email,
@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
         if (rows.length > 0) {
             return res.status(400).json({ message: 'El usuario ya está registrado' });
         }
-         // Validar que todos los campos están presentes
+        //Validar que todos los campos están presentes
         if (!nombre || !email || !password || !n_documento_identidad || !sede || !n_ficha || !jornada || !nombre_del_programa) {
             return res.status(400).json({ message: "Todos los campos son obligatorios" });
         }
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Guardar el usuario en la base de datos
-        await pool.query('INSERT INTO usuario () VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [nombre, email, hashedPassword, n_documento_identidad, sede, n_ficha, jornada, nombre_del_programa]);
+        await pool.query('INSERT INTO usuario (nombre, email, password, n_documento_identidad, sede, n_ficha, jornada, nombre_del_programa) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [nombre, email, hashedPassword, n_documento_identidad, sede, n_ficha, jornada, nombre_del_programa]);
 
         res.status(201).json({ message: 'Usuario registrado exitosamente' });
     } catch (error) {
